@@ -1,0 +1,1 @@
+import{NextResponse}from'next/server';import{orders}from'@/mock/data';export async function GET(){return NextResponse.json({items:orders,total:orders.length})}export async function POST(){return NextResponse.json({id:'ORD-DEMO',status:'Confirmed',message:'Mock Medusa order created with immutable price snapshot'})}
