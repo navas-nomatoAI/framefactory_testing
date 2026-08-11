@@ -1,0 +1,7 @@
+export type Role='Owner'|'Manager'|'Content Manager'|'Sales'|'Workshop';
+export type Artwork={id:string;slug:string;code:string;title:string;artistId:string;artist:string;sellerId:string;category:string;subject:string;style:string;mood:string;theme:string;colours:string[];keywords:string[];orientation:'portrait'|'landscape'|'square';pixelWidth:number;pixelHeight:number;downloadable:boolean;freeDownload:boolean;vectorSource:boolean;printable:boolean;frameable:boolean;original:boolean;stock:number;price:number;status:'Approved'|'Review'|'Restricted'|'Rejected';aiConfidence:number;c1:string;c2:string};
+export type Frame={id:string;code:string;name:string;material:string;colour:string;widthCm:number;rate:number;active:boolean}; export type Option={id:string;name:string;rate:number};
+export type Config={artworkId:string;widthCm:number;heightCm:number;frameId:string;glassId:string;mountId:string;stretchingId:string;print:'Fine art paper'|'Canvas'|'Print-only canvas';shippingZoneId:string};
+export type PriceSnapshot={version:string;base:number;frame:number;glass:number;mount:number;stretching:number;delivery:number;total:number;formula:string};
+export type Order={id:string;customerId:string;sellerId?:string;items:{artworkCode:string;title:string;configuration:Config;priceSnapshot:PriceSnapshot;qty:number;fulfillment:'Art Factory'|'Vendor'}[];status:string;total:number;createdAt:string};
+export type Seller={id:string;type:'artist'|'vendor';name:string;email:string;approvalStatus:string;commission:number};

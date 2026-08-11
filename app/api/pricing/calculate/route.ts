@@ -1,0 +1,1 @@
+import{NextRequest,NextResponse}from'next/server';import{calculatePrice}from'@/services/pricing';export async function POST(req:NextRequest){return NextResponse.json(calculatePrice(await req.json()))}
